@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:rgb(35, 33, 35) ;
+}
+
+h2{
+    color:white;
+    font-size: 100px;
+    text-transform: uppercase;
+    border: 5px solid white;
+    padding: 40px 90px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+h2:before{
+    content: "";
+    width: 120px;
+    height: 150%;
+    position: absolute;
+    top: -50px;
+    left: -130px;
+    background-color: red;
+    z-index: -1;
+    transform: skew(-15deg);
+    animation:llenar 1.2s linear infinite;
+    transition: all 0.3s;
+}
+
+
+
+h2:hover:before{
+    transform: skew(0deg);
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: none;
+    
+    background-color: green;
+}
+
+
+
+/*REGLA*/
+@keyframes llenar{
+    0%{transform: translateX(-130px) skew(-15deg);}
+    
+    100%{transform:translateX(700%) skew(-15deg);}
+   
+}
